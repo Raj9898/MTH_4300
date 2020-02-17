@@ -1,37 +1,26 @@
+// problem1.cpp
+// compile with
+// c++ -o problem1 problem1.cpp
+// execute with
+// ./problem1
+// author: Rajesh Rao
+
 #include <iostream>
 
-// function initilization
-int divisor(int n){
-  // will calculate the number of divisors for a given number
-  // eg. divisor(10) = 4 {1,2,5,10}
- int count = 0, i=1;
+int main(){
+  // variable declaration
+  float a11, a12, a21, a22, b1, b2, y, x;
 
-// itterates through the value and determines divisibility through modulus
- while (i <= n){
-   // if n is dividible by i there exists no remainder and we add to count
-   if (n%i == 0){
-     ++count;
-   }
-   ++i;
- }
- return count;
-}
+  // reading in input from the user for matrix elements
+  std::cin >> a11 >> a12 >> a21 >> a22 >> b1 >> b2;
 
-// function declaration (must be present to execute script)
-int divisor(int);
+  // solved gaussian elimination on a 2x2 case, solving x, y
+  y = (b2-(b1*(a21/a11))) / (a22-(a12*(a21/a11)));
+  x =  (b1 - (a12*y))/a11;
 
-// primary function execution
-int main() {
- int num, i = 1, sum = 0;
- std::cin >> num;
+  // outputs the resulting variables
+  std::cout << "x:" <<  x  <<  "\n" << "y:" <<  y << "\n";
 
- // itterates through all integers up to value specified by user
- // adds a rolling sum to the number of divisors present per each integer
- while (i <= num){
-   sum += divisor(i);
-   ++i;
- }
+  return 0;
 
- std::cout << sum << "\n";
- return 0;
 }
