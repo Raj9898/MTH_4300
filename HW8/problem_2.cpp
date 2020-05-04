@@ -134,14 +134,6 @@ int main(){
   tm.end();
   std::cout << "The non-parallel function running time is: " << tm.getTime() << "\n";
 
-  std::cout << "---------------------------------------\n";
-  //
-  // // runtime for the paralel expression
-  // vm.start();
-  // parallelF(x, n);
-  // vm.end();
-  // std::cout << "The parallel function running time is: " << tm.getTime() << "\n";
-
   delete[] x;
   return 0;
 }
