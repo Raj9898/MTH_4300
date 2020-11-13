@@ -1,7 +1,7 @@
 # Developing Structure
 
-### Decsions - Condtions
+### Decsions
 
-### Loops - Repetion 
+### Loops 
 
 ### Functions
