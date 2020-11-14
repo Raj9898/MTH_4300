@@ -42,25 +42,44 @@ Here is the complete list of fundamental types in C++:
 | Type names | Notes on size / precision |
 | --- | --- |
 | char | Exactly one byte in size. At least 8 bits |
+| char16_t | Not smaller than char. At least 16 bits|
+| char32_t	| Not smaller than char16_t. At least 32 bits|
+| wchar_t	| Can represent the largest supported character set|
+| signed short int	|Not smaller than char. At least 16 bits|
+| signed int	|Not smaller than short. At least 16 bits|
+| signed long int|	Not smaller than int. At least 32 bits|
+| signed long long int|	Not smaller than long. At least 64 bits|
+| Integer types (unsigned)|	unsigned char	(same size as their signed counterparts)|
+| double|	Precision not less than float |
+| long double	|Precision not less than double |
+| Boolean type	|bool	|
+| Void type|	void	no storage|
 
-char16_t	Not smaller than char. At least 16 bits.
-char32_t	Not smaller than char16_t. At least 32 bits.
-wchar_t	Can represent the largest supported character set.
-Integer types (signed)	signed char	Same size as char. At least 8 bits.
-signed short int	Not smaller than char. At least 16 bits.
-signed int	Not smaller than short. At least 16 bits.
-signed long int	Not smaller than int. At least 32 bits.
-signed long long int	Not smaller than long. At least 64 bits.
-Integer types (unsigned)	unsigned char	(same size as their signed counterparts)
-unsigned short int
-unsigned int
-unsigned long int
-unsigned long long int
-Floating-point types	float	
-double	Precision not less than float
-long double	Precision not less than double
-Boolean type	bool	
-Void type	void	no storage
-Null pointer	decltype(nullptr)	
+These variables can be set either through construction or assignment, with _**construction**_ occuring at type declaration and _**assignment**_ occuring post declaration.
+```
+//contruction 
+int x = 10;
+
+//assignment
+int x; 
+x = 10; 
+```
 
 ### Standard Input and Output
+To read in standard in/output from the computer, we call the standard `std` library from `iostream` and direct the flow of keyboard input. This follows as such:
+```
+#inlcude <iostream>
+
+int main(){
+  int input; 
+  
+  std::cin >> input;    // reads in input from user, stores it in variable input
+  
+  std::cout << input;   // prints the variable input to the screen
+}
+```
+We can also write output to the screen using the `printf` function, where we specify the type of variable we are passing 
+```
+int x = 22;
+printf('I am %d years old\n', x);
+```
