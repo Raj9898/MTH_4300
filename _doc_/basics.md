@@ -83,3 +83,22 @@ We can also write output to the screen using the `printf` function, where we spe
 int x = 22;
 printf('I am %d years old\n', x);
 ```
+### Summary
+Bringing it all together we have a test example, which encorprates the newly learned information.
+```
+#inlcude <iostream>
+
+int main(){
+  int x, y, mult;
+  double div;
+  // reads in input from user, stores it in variable input
+  std::cin >> x >> y;    
+  // outputs messages to screen
+  std::cout << 'x multiplied by y is ' << x * y; 
+  
+  div =  x / y;
+  std::cout << 'x divided by y is ' << div; 
+  div = y / x;
+  std::cout << 'y divided by x is ' << div; 
+}
+```
