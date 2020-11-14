@@ -53,3 +53,59 @@ for ( init; condition; increment ) {
 }
 ```
 ### Functions
+A function is a group of statements that together perform a task. Every C++ program has at least one function, which is `main()`, as we defined earlier. General C++ functions consists of a return type to catergorize the output values expected from the function, the function name, the list of parameters and the body of the function. 
+```
+return_type function_name( parameter list ) {
+   body of the function
+}
+```
+Prior to running a function, it is important to declare them at the top of your program, informing the compiler about a function and how to call it. Declarations are written as follows:
+```
+return_type function_name( parameter list );
+```
+There also exists special functions types, namely **void**, that return nothing. These are commonly used in special output functions.
+
+### Summary
+Bringing it all together we have a test example, which encorprates the newly learned information.
+```
+#include <iostream>
+ 
+// function declaration
+int oddEven(int);
+ 
+int main () {
+   // local variable declaration:
+   int a = 100;
+   int itter;
+ 
+   // print quadratic expression for numbers
+   for (itter=0; itter < a; ++itter){
+      specialPrint(itter)
+   }
+ 
+   return 0;
+}
+
+// function printing a quadratic expression for even/odd numbers
+void specialPrint(int num){
+   int val = oddEven(num);
+   
+   if (val == 0){
+      std::cout << '{' << num*num + 2*num - 7 << '}\n';
+   } else {
+      std::cout << '{' << num*num + 5*num - 18 << '}\n';
+   }
+}
+
+// function returning the the even/odd nature of a number
+int oddEven(int num1) {
+   // local variable declaration
+   int result = 0;
+ 
+   if ((num1 % 2) == 0) {
+      return 1;
+   } else {
+      return 0;
+   } 
+}
+```
