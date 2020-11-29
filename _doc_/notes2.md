@@ -63,7 +63,12 @@ Prior to running a function, it is important to declare them at the top of your 
 ```
 return_type function_name( parameter list );
 ```
-There also exists special functions types, namely **void**, that return nothing. These are commonly used in special output functions.
+There also exists special functions types, namely **void**, that return nothing. These are commonly used in special output functions and are declare using the `void` keyword
+```
+void function_name( parameter list ) {
+   body of the function
+}
+```
 
 ### Summary
 Bringing it all together we have a test example, which encorprates the newly learned information.
